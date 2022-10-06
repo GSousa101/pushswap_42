@@ -1,15 +1,17 @@
 NAME =	push_swap
 
-# source / objects 
-SRC = 
+SRCDIR = "./include/"
 
-OBJ = $(SRC:.c=.o)
+# source / objects 
+SRC = push_swap.c
+
+OBJ = $(addprefix $(SRCDIR), $(SRC:.c=.o))
 
 INC = ./inc
 
 all: $(NAME)
 
-$(NAME): libft
+$(NAME): libft $(OBJ)
 
 libft:
 	make -C $(LIBFT_DIR) all
