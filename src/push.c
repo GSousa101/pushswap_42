@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:21:44 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/06 15:44:33 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/12 11:31:24 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 void	push(t_list **lst_orig, t_list **lst_dest)
 {
-	t_list	*orig_node1;
-	t_list	*orig_node2;
+	t_list	*new_node1;
+	t_list	*new_head_orig;
 
-	orig_node1 = *lst_orig;
-	if (orig_node1)
+	new_node1 = *lst_orig;
+	if (new_node1)
 	{
-		orig_node2 = (*lst_orig)->next;
-		lst_orig = orig_node2;
-		ft_lstadd_front(lst_dest, orig_node1);
+		// O segundo nó da lista2 vira o 1º
+		new_head_orig = (*lst_orig)->next;
+		lst_orig = new_head_orig;
+		ft_lstadd_front(lst_dest, new_node1);
 	}
 }
 
