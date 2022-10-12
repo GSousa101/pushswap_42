@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:48:41 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/06 15:57:20 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/12 14:42:12 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	reverse_rotate(t_list **lst)
 {
-	t_list	*last_node2;
+	t_list	*new_last_node;
 	t_list	*last_node;
 
 	last_node = ft_lstlast(*lst);
-	last_node2 = *lst;
-	while (last_node2->next && last_node2->next->next != NULL)
-		last_node2 = last_node2->next;
-	last_node2->next = NULL;
+	new_last_node = *lst;
+	while (new_last_node->next && new_last_node->next->next != NULL)
+		new_last_node = new_last_node->next;
+	new_last_node->next = NULL;
 	ft_lstadd_front(lst, last_node);
 }
 
