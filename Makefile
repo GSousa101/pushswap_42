@@ -1,26 +1,52 @@
-NAME =	push_swap
+NAME	=		push_swap
 
-SRCDIR = "./include/"
+# compiler
+CC	=	cc
+CFLAGS	=	-Wextra -Wall -Werror -g
+
+SRCDIR	=	./src/
+INCDIR	=	./include/
+OBJDIR	=	./obj/
 
 # source / objects 
-SRC = push_swap.c
+SRC	=	push_swap.c push.c rotate.c reverse_rotate \
+	 	swap.c 
 
-OBJ = $(addprefix $(SRCDIR), $(SRC:.c=.o))
+OBJ	=	$(addprefix $(SRCDIR), $(SRC:.c=.o))
 
-INC = ./inc
+# ft library
+FT		=	./libft/
+FT_LIB	=	./libft/libft.a
 
-all: $(NAME)
+# commands
+all: obj $(FT_LIB) $(NAME)
 
-$(NAME): libft $(OBJ)
+obj:
+	mkdir -p $(OBJDIR)
 
-libft:
-	make -C $(LIBFT_DIR) all
+$(OBJDIR)%.o:$(SRCDIR)%.c
+	$(CC) $(CFLAGS) -I $(FT) -I $(INCDIR) -c $< -o $@
+
+$(FT_LIB):
+	make -C $(FT) all
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) $(FT_LIB) -o $@
 
 clean:
-	rm $(OBJ)/%
+	rm -rf $(OBJDIR)
+	make -C $(FT) clean
 
 fclean: clean
+	rm -f $(NAME)
+	make -C $(FT) fclean
 	
 re: fclean all
+
+norm:
+	norminette -CheckForbiddenSourceHeader
+
+valgrind:
+	valgrind
 
 .PHONY:	
