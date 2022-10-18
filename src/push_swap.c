@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/18 15:35:29 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/18 15:59:23 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int	check_arg(char **argv)
 	char	**args;
 
 	args = ft_split(argv[1], ' ');
-	while (args)
+	while (*args)
 	{
-		while (*args)
+		while (**args)
 		{
 			if (!ft_isdigit(**args) && **args)
 				return (0);

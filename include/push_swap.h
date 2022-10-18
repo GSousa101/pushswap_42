@@ -6,12 +6,15 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:58:43 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/12 10:38:50 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/18 14:56:01 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+#include "../libft/libft.h"
+#include "../ft_printf/ft_printf.h"
 
 typedef struct	s_stack
 {

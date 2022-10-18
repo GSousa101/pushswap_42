@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:32:42 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/12 14:38:03 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/18 15:08:32 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rotate(t_list **lst)
 	t_list	*second_node;
 
 	first_node = *lst;
-	second_node = (*lst->next);
+	second_node = (*lst)->next;
 	if (second_node)
 	{
 		*lst = second_node;
