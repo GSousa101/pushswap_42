@@ -10,9 +10,9 @@ OBJDIR	=	./obj/
 
 ############## source / objects #########
 SRC	=	push_swap.c push.c rotate.c reverse_rotate.c \
-	 	swap.c 
+	 	swap.c checker.c
 
-OBJ	=	$(addprefix $(SRCDIR), $(SRC:.c=.o))
+OBJ	=	$(addprefix $(OBJDIR), $(SRC:.c=.o))
 
 ############## ft library ###########
 FT		=	./libft/
@@ -29,7 +29,7 @@ all: obj $(FT_LIB) $(LIB_PTF) $(NAME)
 obj:
 	mkdir -p $(OBJDIR)
 
-$(OBJDIR)%.o:$(SRCDIR)%.c
+$(OBJDIR)%.o: $(SRCDIR)%.c
 	$(CC) $(CFLAGS) -I $(FT) -I $(INCDIR) -c $< -o $@
 
 $(FT_LIB):
