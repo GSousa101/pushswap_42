@@ -10,7 +10,7 @@ OBJDIR	=	./obj/
 
 ############## source / objects #########
 SRC	=	push_swap.c push.c rotate.c reverse_rotate.c \
-	 	swap.c checker.c
+	 	swap.c checker.c ft_atol.c
 
 OBJ	=	$(addprefix $(OBJDIR), $(SRC:.c=.o))
 
