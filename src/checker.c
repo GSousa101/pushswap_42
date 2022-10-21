@@ -6,12 +6,13 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/21 14:34:58 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/21 14:37:23 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+// Testar o - e +
 int	is_int(char **args)
 {
 	int	i;
@@ -36,7 +37,6 @@ int	check_dup(char **args)
 	return (0);
 }
 
-// Preciso deixar passar 1 sinal de + ou -
 int	check_letter(char **args)
 {
 	int	i;
