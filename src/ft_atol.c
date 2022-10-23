@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
@@ -14,12 +14,11 @@
 
 int	ft_atol(const char *nbr)
 {
-	int			count;
-	int			signal;
-	long int	nbrnbr;
+	int		count;
+	int		signal;
+	long long	nbrnbr;
 
 	count = 0;
-	signal = 1;
 	while (nbr[count] == ' '
 		|| nbr[count] == '\f'
 		|| nbr[count] == '\n'
@@ -27,6 +26,7 @@ int	ft_atol(const char *nbr)
 		|| nbr[count] == '\t'
 		|| nbr[count] == '\v')
 		count++;
+	signal = 1;
 	if (nbr[count] == '-')
 		signal = -1;
 	if (nbr[count] == '-' || nbr[count] == '+')
