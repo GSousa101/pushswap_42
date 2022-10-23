@@ -12,14 +12,14 @@
 
 #include "../include/push_swap.h"
 
-// Testar o - e +
-int	is_int(char **args)
+int	is_valid_int(char **args)
 {
 	int	i;
 
-	i = 0;
-	if (ft_atol(args[i]) < INT_MIN || ft_atol(args[i]) > INT_MAX)
-		return (0);
+	i = -1;
+	while (args[++i])
+		if (ft_atol(args[i]) < INT_MIN || ft_atol(args[i]) > INT_MAX)
+			return (0);
 	return (1);
 }
 
@@ -66,21 +66,22 @@ int	check_letter(char **args)
  * procura por algo diferente de numero
  * entre os max e min de int ##### FALTA ESSE
  * Ver se não é float
+ * Checar se já está ordenado
  */
 int	check_arg(char **argv)
 {
 	char	**args;
 
 	args = ft_split(argv[1], ' ');
-	if (check_letter(args) || check_dup(args) || is_int(args)))
-	
-		ft_printf("Error");
-		if (check_letter(args)
-			ft_printf("The argument is not interger");
+	if (check_letter(args) || check_dup(args) || !is_valid_int(args))
+	{	
+		ft_printf("Error\n");
+		if (check_letter(args))
+			ft_printf("The argument is not interger\n");
 		if (check_dup(args))
-			ft_printf("The argument contains duplicate values");
-		if (is_int(args))
-			ft_printf("The argument is beyond the value of an interger");
+			ft_printf("The argument contains duplicate values\n");
+		if (!is_valid_int(args))
+			ft_printf("The argument is beyond the value of an interger\n");
 		return (0);
 	}
 	return (1);

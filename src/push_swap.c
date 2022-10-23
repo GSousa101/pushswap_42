@@ -35,9 +35,9 @@ void	receive_value(char **argv, t_list **list_a)
 int	main(int argc, char **argv)
 {
 //	t_list	*list_a;
-	t_list	*list_b;
+//	t_list	*list_b;
 
-	list_b = NULL;
+//	list_b = NULL;
 	if (argc > 1 && argv)
 	{
 		if (check_arg(argv))
@@ -52,8 +52,6 @@ int	main(int argc, char **argv)
 */
 			ft_printf("Done\n");
 		}
-		else
-			ft_printf("Error\n");
 	}
 	return (0);
 }
