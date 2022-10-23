@@ -65,14 +65,24 @@ int	check_letter(char **args)
  * Procura por valores duplicados
  * procura por algo diferente de numero
  * entre os max e min de int ##### FALTA ESSE
+ * Ver se não é float
  */
 int	check_arg(char **argv)
 {
 	char	**args;
 
 	args = ft_split(argv[1], ' ');
-	if (check_letter(args) || check_dup(args) || is_int(args))
+	if (check_letter(args) || check_dup(args) || is_int(args)))
+	
+		ft_printf("Error");
+		if (check_letter(args)
+			ft_printf("The argument is not interger");
+		if (check_dup(args))
+			ft_printf("The argument contains duplicate values");
+		if (is_int(args))
+			ft_printf("The argument is beyond the value of an interger");
 		return (0);
+	}
 	return (1);
 	
 }
