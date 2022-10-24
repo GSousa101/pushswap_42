@@ -52,29 +52,20 @@ t_list	*categorize_index(t_list **list_a)
 	return (new_list_a);
 }
 
-/**
- * Conta os índices do argumento
- * *
- */
+//conto qtd args.
+// Adiciono na frente porque começo por trás.
 void	receive_value(char **argv, t_list **list_a)
 {
 	int		i;
 	
 	i = 1;
-	//conto qtd args.
 	while (argv[i])
 		i++;
-	// Adiciono na frente porque começo por trás.
 	while (--i)
 		ft_lstadd_front(list_a, ft_lstnew(argv[i]));
 	*list_a = categorize_index(list_a);
 }
 
-// Checar se é valido
-// Receber os valores de argv
-// organizar 3
-// organizar 5
-// organizar all
 int	main(int argc, char **argv)
 {
 	t_list	*list_a;
