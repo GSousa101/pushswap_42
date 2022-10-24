@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 15:03:54 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 15:13:02 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,19 @@ t_list	*categorize_index(t_list **list_a)
 
 //conto qtd args.
 // Adiciono na frente porque começo por trás.
-void	receive_value(char **args, t_list **list_a)
+int	receive_value(char **args, t_list **list_a)
 {
-	int		i;
+	int	i;
+	int	total_num;
 	
 	i = 1;
 	while (args[i])
 		i++;
+	total_num = i - 1;
 	while (--i)
 		ft_lstadd_front(list_a, ft_lstnew(args[i]));
 	*list_a = categorize_index(list_a);
+	return (total_num);
 }
 
 int	main(int argc, char **argv)
@@ -74,6 +77,7 @@ int	main(int argc, char **argv)
 	t_list	*list_a;
 //	t_list	*list_b;
 	char	**args;
+	int		total_num;
 
 	args = NULL;
 //	list_b = NULL;
@@ -81,10 +85,10 @@ int	main(int argc, char **argv)
 	{
 		if (check_arg(argv, argc, &args))
 		{
-			receive_value(args, &list_a);
-			/*'if (argc == 4)
+			total_num = receive_value(args, &list_a);
+			if (total_num  == 3)
 				sort_3(&list_a);
-			else if (argc <= 6)
+			/*else if (argc <= 6)
 				sort_5(&list_a, &list_b);
 			else
 				sort_big(&list_a, list_b);
