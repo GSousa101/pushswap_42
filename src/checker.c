@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/21 14:37:23 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 11:36:16 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_dup(char **args)
 	int	i;
 
 	i = 0;
-	while (args[i + 1])
+	while (args[1][i + 1])
 	{
 		if (!ft_strncmp(args[i], args[i + 1], ft_strlen(args[i])))
 			return (1);
@@ -61,6 +61,22 @@ int	check_letter(char **args)
 	return (0);
 }
 
+char	**join_args(int	argc, char **argv, char **args)
+{
+	int	i;
+
+	i = 0;
+	args = malloc(argc * sizeof(char *));
+	if (args)
+		while (argv[++i])
+		{
+			args[i - 1] = malloc(ft_strlen(argv[i]));
+			if (args[i - 1])
+				args[i - 1] = ft_memcpy(args[i - 1], argv[i], ft_strlen(argv[i]));
+		}
+	return (args);
+}
+
 /**
  * Procura por valores duplicados
  * procura por algo diferente de numero
@@ -68,11 +84,15 @@ int	check_letter(char **args)
  * Ver se não é float
  * Checar se já está ordenado
  */
-int	check_arg(char **argv)
+int	check_arg(char **argv, int argc)
 {
 	char	**args;
 
-	args = ft_split(argv[1], ' ');
+	args = NULL;
+	if (argc > 2)
+		args = join_args(argc, argv, args);
+	else
+		args = ft_split(argv[1], ' ');
 	if (check_letter(args) || check_dup(args) || !is_valid_int(args))
 	{	
 		ft_printf("Error\n");

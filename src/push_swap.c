@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/21 11:43:15 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 12:17:07 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char **argv)
 //	list_b = NULL;
 	if (argc > 1 && argv)
 	{
-		if (check_arg(argv))
+		if (check_arg(argv, argc))
 		{
 			receive_value(argv, &list_a);
 			/*'if (argc == 4)
