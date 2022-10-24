@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 12:33:01 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 14:08:42 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,17 @@ int	is_valid_int(char **args)
 	return (1);
 }
 
-// O problema está que o while de fora é para quando
-// o args está separado em split que veio sem ""
-// e o de dentro foi para quando veio de split com ""
 int	check_dup(char **args)
 {
 	int	i;
-	int	n_num;
 
-	n_num = 0;
-	while (args[n_num])
-		n_num++;
 	i = 0;
-	while (args[--n_num])
-		while (args[n_num][i + 1])
-		{
-			if (!ft_strncmp(args[i], args[i + 1], ft_strlen(args[i])))
-				return (1);
-			i++;
-		}
+	while (args[i + 1])
+	{
+		if (!ft_strncmp(args[i], args[i + 1], ft_strlen(args[i])))
+			return (1);
+		i++;
+	}
 	return (0);
 }
 
