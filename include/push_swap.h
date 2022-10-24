@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:58:43 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 15:14:47 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 17:39:35 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		ft_atol(const char *nbr);
 void	point_to_null(void *pointer);
 
 void	sort_3(t_list **list_a);
+void	sort_5(t_list **list_a, t_list **list_b);
 
 #endif

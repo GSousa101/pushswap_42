@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 15:13:02 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 17:39:01 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,12 @@ int	receive_value(char **args, t_list **list_a)
 int	main(int argc, char **argv)
 {
 	t_list	*list_a;
-//	t_list	*list_b;
+	t_list	*list_b;
 	char	**args;
 	int		total_num;
 
 	args = NULL;
-//	list_b = NULL;
+	list_b = NULL;
 	if (argc > 1 && argv)
 	{
 		if (check_arg(argv, argc, &args))
@@ -88,9 +88,9 @@ int	main(int argc, char **argv)
 			total_num = receive_value(args, &list_a);
 			if (total_num  == 3)
 				sort_3(&list_a);
-			/*else if (argc <= 6)
+			else if (argc <= 6)
 				sort_5(&list_a, &list_b);
-			else
+			/*else
 				sort_big(&list_a, list_b);
 */
 			ft_printf("Done\n");
