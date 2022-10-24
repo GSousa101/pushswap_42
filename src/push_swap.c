@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 12:17:07 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 14:49:57 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,15 @@ t_list	*categorize_index(t_list **list_a)
 
 //conto qtd args.
 // Adiciono na frente porque começo por trás.
-void	receive_value(char **argv, t_list **list_a)
+void	receive_value(char **args, t_list **list_a)
 {
 	int		i;
 	
 	i = 1;
-	while (argv[i])
+	while (args[i])
 		i++;
 	while (--i)
-		ft_lstadd_front(list_a, ft_lstnew(argv[i]));
+		ft_lstadd_front(list_a, ft_lstnew(args[i]));
 	*list_a = categorize_index(list_a);
 }
 
@@ -70,13 +70,15 @@ int	main(int argc, char **argv)
 {
 	t_list	*list_a;
 //	t_list	*list_b;
+	char	**args;
 
+	args = NULL;
 //	list_b = NULL;
 	if (argc > 1 && argv)
 	{
-		if (check_arg(argv, argc))
+		if (check_arg(argv, argc, &args))
 		{
-			receive_value(argv, &list_a);
+			receive_value(args, &list_a);
 			/*'if (argc == 4)
 				sort_3(&list_a);
 			else if (argc <= 6)

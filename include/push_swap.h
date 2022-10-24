@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:58:43 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/21 14:32:12 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 14:48:00 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	rra(t_list **lst_a);
 void	rrb(t_list **lst_b);
 void	rrr(t_list **lst_a, t_list **lst_b);
 
-int		check_arg(char **args);
+int		check_arg(char **argv, int argc, char ***args);
 int		ft_atol(const char *nbr);
 
 #endif

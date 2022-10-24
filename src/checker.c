@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 14:08:42 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 14:48:53 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,23 +84,20 @@ char	**join_args(int	argc, char **argv, char **args)
  * Ver se não é float
  * Checar se já está ordenado
  */
-int	check_arg(char **argv, int argc)
+int	check_arg(char **argv, int argc, char ***args)
 {
-	char	**args;
-
-	args = NULL;
 	if (argc > 2)
-		args = join_args(argc, argv, args);
+		*args = join_args(argc, argv, *args);
 	else
-		args = ft_split(argv[1], ' ');
-	if (check_letter(args) || check_dup(args) || !is_valid_int(args))
+		*args = ft_split(argv[1], ' ');
+	if (check_letter(*args) || check_dup(*args) || !is_valid_int(*args))
 	{	
 		ft_printf("Error\n");
-		if (check_letter(args))
+		if (check_letter(*args))
 			ft_printf("The argument is not interger\n");
-		if (check_dup(args))
+		if (check_dup(*args))
 			ft_printf("The argument contains duplicate values\n");
-		if (!is_valid_int(args))
+		if (!is_valid_int(*args))
 			ft_printf("The argument is beyond the value of an interger\n");
 		return (0);
 	}
