@@ -6,12 +6,15 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 14:49:57 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/24 15:03:54 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/**
+ * Comparar o quantos numeros são menores que ele (definir indice)
+ */
 int	find_index(t_list *list_a, int actual_num)
 {
 	int	index;
@@ -28,9 +31,8 @@ int	find_index(t_list *list_a, int actual_num)
 
 /**
  * Eu devo pegar a lista que já tenho
- * Olhar cada numero
- * Comparar o quantos numeros são menores que ele (definir indice)
- * Colocar atrás em uma outra lista
+ * pegar indice de cada numero
+ * Colocar esse numer atrás em uma outra lista
  * Devolver a lista não organizada, em que os numeros viraram indice
  */
 t_list	*categorize_index(t_list **list_a)
@@ -49,6 +51,7 @@ t_list	*categorize_index(t_list **list_a)
 		ft_lstadd_back(&new_list_a, ft_lstnew(ft_itoa(n_index)));
 		list_a_move = list_a_move->next;
 	}
+	ft_lstclear(list_a, point_to_null);
 	return (new_list_a);
 }
 
