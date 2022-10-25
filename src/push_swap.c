@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/25 12:01:28 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/25 14:21:12 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_list	*categorize_index(t_list **list_a)
 		ft_lstadd_back(&new_list_a, ft_lstnew(ft_itoa(n_index)));
 		list_a_move = list_a_move->next;
 	}
-	ft_lstclear(list_a, point_to_null);
+	ft_lstclear(list_a, free);
 	return (new_list_a);
 }
 
