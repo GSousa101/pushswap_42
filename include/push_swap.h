@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:58:43 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/25 10:58:08 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/25 12:01:59 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ void	rrr(t_list **lst_a, t_list **lst_b);
 
 int		check_arg(char **argv, int argc, char ***args);
 int		ft_atol(const char *nbr);
+
 void	point_to_null(void *pointer);
+void	quit(t_list **list);
 
 void	sort_3(t_list **list_a);
 void	sort_5(t_list **list_a, t_list **list_b);
