@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 17:39:01 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/25 11:05:19 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_list	*categorize_index(t_list **list_a)
 	list_a_move = *list_a;
 	while (list_a_move)
 	{
-		actual_num = ft_atoi((*list_a)->content);
+		actual_num = ft_atoi(list_a_move->content);
 		n_index = find_index(*list_a, actual_num);
 		ft_lstadd_back(&new_list_a, ft_lstnew(ft_itoa(n_index)));
 		list_a_move = list_a_move->next;
@@ -65,8 +65,8 @@ int	receive_value(char **args, t_list **list_a)
 	i = 1;
 	while (args[i])
 		i++;
-	total_num = i - 1;
-	while (--i)
+	total_num = i;
+	while (i--)
 		ft_lstadd_front(list_a, ft_lstnew(args[i]));
 	*list_a = categorize_index(list_a);
 	return (total_num);

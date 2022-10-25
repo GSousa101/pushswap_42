@@ -6,11 +6,20 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:13:16 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 18:39:53 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/25 10:57:21 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	print_list(t_list *list)
+{
+	while (list)
+	{
+		ft_printf("%s\n", (char *)list->content);
+		list = list->next;
+	}
+}
 
 int	is_biggest_back(t_list *list_a)
 {
@@ -39,6 +48,7 @@ int	is_ordered(t_list *list_a)
 
 void	sort_3(t_list **list_a)
 {
+	print_list(*list_a);
 	while (!is_ordered(*list_a))
 	{
 		if (is_biggest_back(*list_a))
