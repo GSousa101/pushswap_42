@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/25 14:21:12 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/25 14:25:23 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,12 @@ int	main(int argc, char **argv)
 		if (check_arg(argv, argc, &args))
 		{
 			total_num = receive_value(args, &list_a);
-			if (total_num  == 3)
+			if (total_num == 3)
 				sort_3(&list_a);
 			else if (argc <= 6)
 				sort_5(&list_a, &list_b);
-			/*else
-				sort_big(&list_a, list_b);
-*/
+			else
+				sort_big(&list_a, &list_b);
 		}
 		quit(&list_a);
 	}

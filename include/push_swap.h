@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:58:43 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/25 12:01:59 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/25 14:25:07 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	quit(t_list **list);
 
 void	sort_3(t_list **list_a);
 void	sort_5(t_list **list_a, t_list **list_b);
+void	sort_big(t_list **list_a, t_list **list_b);
 
 void	print_list(t_list *list);
 
