@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:58:43 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 17:39:35 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/25 10:58:08 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ void	point_to_null(void *pointer);
 
 void	sort_3(t_list **list_a);
 void	sort_5(t_list **list_a, t_list **list_b);
+
+void	print_list(t_list *list);
 
 #endif
