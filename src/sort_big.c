@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:23:15 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/25 17:29:38 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/26 14:44:08 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,16 @@ void	radix_my_b(t_list **list_a, t_list **list_b, int msb)
 
 	i = 0;
 	size_list_b = ft_lstsize(*list_b);
-	while (i++ < size_list_b)
+	while (i++ < size_list_b && !is_rev_ordered(*list_b))
 	{
-		if (is_rev_ordered(*list_b))
-			pa(list_a, list_b);
-		else if (ft_atoi((*list_b)->content) & (1 << msb))
+		if (ft_atoi((*list_b)->content) & (1u << msb))
 			pa(list_a, list_b);
 		else
 			rb(list_b);
 	}
 	if (is_rev_ordered(*list_b))
-		radix_my_b(list_a, list_b, 0);
+		while (ft_lstsize(*list_b))
+			pa(list_a, list_b);
 }
 
 void	radix_my_a(t_list **list_a, t_list **list_b, int msb)
@@ -54,7 +53,7 @@ void	radix_my_a(t_list **list_a, t_list **list_b, int msb)
 	{
 		// Se tiver o bit mais significativivo (maior), fica na A.
 		// Se não, vai para B.
-		if (ft_atoi((*list_a)->content) & (1 << msb))
+		if (ft_atoi((*list_a)->content) & (1u << msb))
 		{
 //			if (ft_atoi((*list)->content) & (1 << msb - 1))
 			ra(list_a);
