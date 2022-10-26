@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:23:15 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/26 14:44:08 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/10/26 18:05:04 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,7 @@ void	radix_my_a(t_list **list_a, t_list **list_b, int msb)
 		// Se tiver o bit mais significativivo (maior), fica na A.
 		// Se não, vai para B.
 		if (ft_atoi((*list_a)->content) & (1u << msb))
-		{
-//			if (ft_atoi((*list)->content) & (1 << msb - 1))
 			ra(list_a);
-		}
 		else
 			pb(list_a, list_b);
 	}
