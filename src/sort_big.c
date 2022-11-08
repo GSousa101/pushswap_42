@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:23:15 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/08 14:25:08 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/08 15:01:10 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,27 +93,3 @@ void	sort_big(t_list **list_a, t_list **list_b)
 	while (*list_b)
 		pa(list_a, list_b);
 }
-
-/**
- * Classificar pelo msb de cada numero
- *
- * Passa os maiores para lá.
- * Vai formar várias categorias, notorganized entre si
- * Ao passar para o A, vai ficar o menor embaixo.
- * Se eu decidi organizar o contrário vai ficar maior até menor,
- *
-void	fut()
-{
-	
-	while (*list_a)
-	{
-		num = ft_atoi((*list_a)->content);
-		while (num)
-		{
-			num = num << house;
-			house++
-		}
-
-	}
-}
-*/

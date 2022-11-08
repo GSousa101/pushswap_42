@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/25 14:25:23 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/08 17:48:46 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ int	main(int argc, char **argv)
 				sort_5(&list_a, &list_b);
 			else
 				sort_big(&list_a, &list_b);
+			quit(&list_a, args);
 		}
-		quit(&list_a);
 	}
 	return (0);
 }
