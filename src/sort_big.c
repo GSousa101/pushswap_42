@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:23:15 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/26 18:05:04 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/08 14:25:08 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,13 @@ void	radix_my_b(t_list **list_a, t_list **list_b, int msb)
 
 	i = 0;
 	size_list_b = ft_lstsize(*list_b);
-	while (i++ < size_list_b && !is_rev_ordered(*list_b))
+	while (i++ < size_list_b)
 	{
 		if (ft_atoi((*list_b)->content) & (1u << msb))
 			pa(list_a, list_b);
 		else
 			rb(list_b);
 	}
-	if (is_rev_ordered(*list_b))
-		while (ft_lstsize(*list_b))
-			pa(list_a, list_b);
 }
 
 void	radix_my_a(t_list **list_a, t_list **list_b, int msb)
@@ -93,6 +90,8 @@ void	sort_big(t_list **list_a, t_list **list_b)
 		cont--;
 		radix_my_b(list_a, list_b, pos_msb - cont);
 	}
+	while (*list_b)
+		pa(list_a, list_b);
 }
 
 /**

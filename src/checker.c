@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/24 14:48:53 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/08 14:51:06 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	check_dup(char **args)
 	i = 0;
 	while (args[i + 1])
 	{
-		if (!ft_strncmp(args[i], args[i + 1], ft_strlen(args[i])))
+		if (ft_atoi(args[i]) == ft_atoi(args[i + 1]))
 			return (1);
 		i++;
 	}
@@ -82,7 +82,6 @@ char	**join_args(int	argc, char **argv, char **args)
  * procura por algo diferente de numero
  * entre os max e min de int ##### FALTA ESSE
  * Ver se não é float
- * Checar se já está ordenado
  */
 int	check_arg(char **argv, int argc, char ***args)
 {
