@@ -6,13 +6,13 @@
 /*   By: gusousa <gusousa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:34:17 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/21 14:00:20 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:59:49 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_atol(const char *nbr)
+long long	ft_atol(const char *nbr)
 {
 	int		count;
 	int		signal;

@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:59:26 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/08 17:50:21 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/08 19:11:36 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,5 @@ void	quit(t_list **list, char **args)
 	i = -1;
 	if (list)
 		ft_lstclear(list, free);
-	//while (args[++i])
-	//	free(args[i]);
 	free(args);
 }

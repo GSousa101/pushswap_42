@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/08 14:51:06 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/16 17:02:25 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,14 @@ char	**join_args(int	argc, char **argv, char **args)
 	i = 0;
 	args = malloc(argc * sizeof(char *));
 	if (args)
+	{
 		while (argv[++i])
 		{
 			args[i - 1] = malloc(ft_strlen(argv[i]));
 			if (args[i - 1])
 				args[i - 1] = ft_memcpy(args[i - 1], argv[i], ft_strlen(argv[i]));
 		}
+	}
 	return (args);
 }
 
@@ -89,14 +91,17 @@ int	check_arg(char **argv, int argc, char ***args)
 		*args = join_args(argc, argv, *args);
 	else
 		*args = ft_split(argv[1], ' ');
-	if (check_letter(*args) || check_dup(*args) || !is_valid_int(*args))
+	if (!is_valid_int(*args) || check_letter(*args) || check_dup(*args))
 	{	
 		ft_printf("Error\n");
-		if (check_letter(*args))
-			ft_printf("The argument is not interger\n");
-		if (check_dup(*args))
-			ft_printf("The argument contains duplicate values\n");
-		if (!is_valid_int(*args))
+		if (is_valid_int(*args))
+		{
+			if (check_letter(*args))
+				ft_printf("The argument is not an interger\n");
+			if (check_dup(*args))
+				ft_printf("The argument contains duplicate values\n");
+		}
+		else
 			ft_printf("The argument is beyond the value of an interger\n");
 		return (0);
 	}
