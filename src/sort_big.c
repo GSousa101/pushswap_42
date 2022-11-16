@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:23:15 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/08 15:01:10 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/16 18:37:13 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	sort_big(t_list **list_a, t_list **list_b)
 {
 	int	pos_msb;
 	int	cont;
+
 	pos_msb = get_msb(*list_a);
 	cont = pos_msb;
 	while (cont)

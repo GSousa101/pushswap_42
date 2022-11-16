@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:43:37 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/18 15:25:33 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/16 18:39:00 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ void	ss(t_list **lst_a, t_list **lst_b)
 	swap(lst_b);
 	ft_printf("ss\n");
 }
-

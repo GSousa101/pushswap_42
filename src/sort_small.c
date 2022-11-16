@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:13:16 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/08 15:00:07 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/16 18:38:41 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ void	sort_5(t_list **list_a, t_list **list_b)
 	pos = 0;
 	while (ft_lstsize(*list_a) > 3)
 	{
-		while (!is_ordered(*list_a) 
-				&& ft_atoi((*list_a)->content) != find_smallest(*list_a, &pos))
+		while (!is_ordered(*list_a)
+			&& ft_atoi((*list_a)->content) != find_smallest(*list_a, &pos))
 		{
 			if (pos < ft_lstsize(*list_a) / 2)
 				ra(list_a);

@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/16 17:02:25 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/16 18:29:07 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	check_letter(char **args)
 	return (0);
 }
 
-char	**join_args(int	argc, char **argv, char **args)
+char	**join_args(int argc, char **argv, char **args)
 {
 	int	i;
 
@@ -73,7 +73,8 @@ char	**join_args(int	argc, char **argv, char **args)
 		{
 			args[i - 1] = malloc(ft_strlen(argv[i]));
 			if (args[i - 1])
-				args[i - 1] = ft_memcpy(args[i - 1], argv[i], ft_strlen(argv[i]));
+				args[i - 1] = ft_memcpy(args[i - 1], argv[i],
+						ft_strlen(argv[i]));
 		}
 	}
 	return (args);
@@ -106,5 +107,4 @@ int	check_arg(char **argv, int argc, char ***args)
 		return (0);
 	}
 	return (1);
-	
 }

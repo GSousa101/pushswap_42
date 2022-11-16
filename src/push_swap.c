@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/16 18:10:19 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/16 18:36:51 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ t_list	*categorize_index(t_list **list_a)
 {
 	t_list	*list_a_move;
 	t_list	*new_list_a;
-	int	n_index;
-	int	actual_num;
+	int		n_index;
+	int		actual_num;
 
 	new_list_a = NULL;
 	list_a_move = *list_a;
@@ -61,7 +61,7 @@ int	receive_value(char **args, t_list **list_a)
 {
 	int	i;
 	int	total_num;
-	
+
 	i = 1;
 	while (args[i])
 		i++;
