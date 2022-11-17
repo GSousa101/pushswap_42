@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:43:37 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/16 18:39:00 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/17 09:26:19 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	swap(t_list **lst)
 {
 	t_list	*second_node;
 
-	//My idea
 	second_node = (*lst)->next;
 	if (second_node)
 	{

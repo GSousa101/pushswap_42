@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:23:15 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/16 18:37:13 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/17 09:26:07 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ void	radix_my_a(t_list **list_a, t_list **list_b, int msb)
 	size_list_a = ft_lstsize(*list_a);
 	while (i++ < size_list_a && !is_ordered(*list_a))
 	{
-		// Se tiver o bit mais significativivo (maior), fica na A.
-		// Se não, vai para B.
 		if (ft_atoi((*list_a)->content) & (1u << msb))
 			ra(list_a);
 		else

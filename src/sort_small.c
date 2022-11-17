@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:13:16 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/16 18:38:41 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/17 09:51:03 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,20 +72,23 @@ void	sort_5(t_list **list_a, t_list **list_b)
 {
 	int	pos;
 
-	pos = 0;
-	while (ft_lstsize(*list_a) > 3)
+	if (!is_ordered(*list_a))
 	{
-		while (!is_ordered(*list_a)
-			&& ft_atoi((*list_a)->content) != find_smallest(*list_a, &pos))
+		pos = 0;
+		while (ft_lstsize(*list_a) > 3)
 		{
-			if (pos < ft_lstsize(*list_a) / 2)
-				ra(list_a);
-			else
-				rra(list_a);
+			while (!is_ordered(*list_a)
+				&& ft_atoi((*list_a)->content) != find_smallest(*list_a, &pos))
+			{
+				if (pos < ft_lstsize(*list_a) / 2)
+					ra(list_a);
+				else
+					rra(list_a);
+			}
+			pb(list_a, list_b);
 		}
-		pb(list_a, list_b);
+		sort_3(list_a);
+		pa(list_a, list_b);
+		pa(list_a, list_b);
 	}
-	sort_3(list_a);
-	pa(list_a, list_b);
-	pa(list_a, list_b);
 }

@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_index.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/16 19:31:17 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/17 09:25:31 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/**
- * Comparar o quantos numeros são menores que ele (definir indice)
- */
 char	*find_index(t_list *list_a, int actual_num)
 {
 	int	index;
@@ -29,12 +26,6 @@ char	*find_index(t_list *list_a, int actual_num)
 	return (ft_itoa(index));
 }
 
-/**
- * Eu devo pegar a lista que já tenho
- * pegar indice de cada numero
- * Colocar esse numer atrás em uma outra lista
- * Devolver a lista não organizada, em que os numeros viraram indice
- */
 t_list	*categorize_index(t_list **list_a, char ***n_index_char)
 {
 	t_list	*list_a_move;
@@ -56,8 +47,6 @@ t_list	*categorize_index(t_list **list_a, char ***n_index_char)
 	return (new_list_a);
 }
 
-//conto qtd args.
-// Adiciono na frente porque começo por trás.
 int	receive_value(char **args, t_list **list_a, char ***n_index_char)
 {
 	int	i;

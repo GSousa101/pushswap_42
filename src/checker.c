@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/17 08:48:36 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/17 10:00:20 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,18 @@ int	is_valid_int(char **args)
 int	check_dup(char **args)
 {
 	int	i;
+	int	c;
 
 	i = 0;
 	while (args[i + 1])
 	{
-		if (ft_atoi(args[i]) == ft_atoi(args[i + 1]))
-			return (1);
+		c = i + 1;
+		while (args[c])
+		{
+			if (ft_atoi(args[i]) == ft_atoi(args[c]))
+				return (1);
+			c++;
+		}
 		i++;
 	}
 	return (0);
@@ -81,12 +87,6 @@ char	**join_args(int argc, char **argv, char **args)
 	return (args);
 }
 
-/**
- * Procura por valores duplicados
- * procura por algo diferente de numero
- * entre os max e min de int ##### FALTA ESSE
- * Ver se não é float
- */
 int	check_arg(char **argv, int argc, char ***args)
 {
 	if (argc > 2)
@@ -96,15 +96,6 @@ int	check_arg(char **argv, int argc, char ***args)
 	if (!is_valid_int(*args) || check_letter(*args) || check_dup(*args))
 	{	
 		ft_printf("Error\n");
-		if (is_valid_int(*args))
-		{
-			if (check_letter(*args))
-				ft_printf("The argument is not an interger\n");
-			if (check_dup(*args))
-				ft_printf("The argument contains duplicate values\n");
-		}
-		else
-			ft_printf("The argument is beyond the value of an interger\n");
 		return (0);
 	}
 	return (1);

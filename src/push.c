@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:21:44 by gusousa           #+#    #+#             */
-/*   Updated: 2022/10/25 11:23:11 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/17 09:24:37 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	push(t_list **lst_orig, t_list **lst_dest)
 	new_node1 = *lst_orig;
 	if (new_node1)
 	{
-		// O segundo nó da lista2 vira o 1º
 		new_head_orig = (*lst_orig)->next;
 		*lst_orig = new_head_orig;
 		ft_lstadd_front(lst_dest, new_node1);
