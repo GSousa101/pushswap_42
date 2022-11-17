@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:58:43 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/16 19:57:36 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/17 14:19:52 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 # include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
 # include <limits.h>
-
-typedef struct s_stack
-{
-	int				content;
-	struct s_stack	*next;
-}	t_stack;
 
 void		sa(t_list **lst_a);
 void		sb(t_list **lst_b);
@@ -41,7 +35,7 @@ void		rrr(t_list **lst_a, t_list **lst_b);
 int			check_arg(char **argv, int argc, char ***args);
 long long	ft_atol(const char *nbr);
 
-void		quit(t_list **list, char **args);
+void		quit(t_list **list, char **args, int error);
 
 void		sort_3(t_list **list_a);
 void		sort_5(t_list **list_a, t_list **list_b);

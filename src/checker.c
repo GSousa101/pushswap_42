@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/17 10:00:20 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/17 14:19:08 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,9 @@ char	**join_args(int argc, char **argv, char **args)
 
 int	check_arg(char **argv, int argc, char ***args)
 {
+	int	i;
+
+	i = -1;
 	if (argc > 2)
 		*args = join_args(argc, argv, *args);
 	else
