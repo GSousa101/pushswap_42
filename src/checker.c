@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/16 19:43:27 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/17 08:48:36 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,10 @@ char	**join_args(int argc, char **argv, char **args)
 	{
 		while (argv[++i])
 		{
-			args[i - 1] = malloc(ft_strlen(argv[i]));
+			args[i - 1] = malloc(ft_strlen(argv[i]) + 1);
 			if (args[i - 1])
 				args[i - 1] = ft_memcpy(args[i - 1], argv[i],
-						ft_strlen(argv[i]));
+						ft_strlen(argv[i]) + 1);
 		}
 		args[i - 1] = NULL;
 	}
