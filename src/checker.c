@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/22 15:23:49 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/22 16:11:06 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ int	check_arg(char **argv, int argc, char ***args)
 		*args = join_args(argc, argv, *args);
 	else
 		*args = ft_split(argv[1], ' ');
-	if (!is_valid_int(*args) || check_letter(*args) || check_dup(*args))
+	if (*args == NULL || **args == NULL
+		|| !is_valid_int(*args) || check_letter(*args) || check_dup(*args))
 	{	
 		ft_printf("Error\n");
 		return (0);
