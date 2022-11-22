@@ -6,7 +6,7 @@
 /*   By: gusousa <gusousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:50 by gusousa           #+#    #+#             */
-/*   Updated: 2022/11/17 14:19:08 by gusousa          ###   ########.fr       */
+/*   Updated: 2022/11/22 15:23:49 by gusousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,7 @@ int	check_letter(char **args)
 		{
 			if (args[i][j] == '-' || args[i][j] == '+')
 				j++;
-			if (args[i][j] == '-' || args[i][j] == '+')
-				return (1);
-			if (!ft_isdigit(args[i][j]) && args[i][j])
+			if (!ft_isdigit(args[i][j]))
 				return (1);
 			j++;
 		}
